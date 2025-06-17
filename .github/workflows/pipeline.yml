@@ -6,17 +6,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
-        cache: 'npm'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
 
-    - run: |
-        npm ci
-        npx playwright install --with-deps
+      - run: |
+          npm ci
+          npx playwright install --with-deps
 
-    - name: Run playwright test (headless)
-      run: npx playwright test
+      - name: Run playwright test (headless)
+        run: npx playwright test
